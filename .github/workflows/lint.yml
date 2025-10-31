@@ -4,9 +4,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest # Or other supported runners like macos-latest, windows-latest
     steps:
-    - uses: actions/checkout@v4 # Checkout your repository code
+    - uses: actions/checkout@v5 # Checkout your repository code
     - name: Run C/C++ Linter
-      uses: cpp-linter/cpp-linter-action@v5
+      uses: cpp-linter/cpp-linter-action@v2
       id: linter
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for commenting/annotations
