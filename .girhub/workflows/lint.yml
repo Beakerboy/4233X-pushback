@@ -1,0 +1,22 @@
+name: C/C++ Linter
+
+    on: [pull_request, push]
+
+    jobs:
+      lint:
+        runs-on: ubuntu-latest # Or other supported runners like macos-latest, windows-latest
+
+        steps:
+          - uses: actions/checkout@v4 # Checkout your repository code
+
+          - name: Run C/C++ Linter
+            uses: cpp-linter/cpp-linter-action@v2
+            id: linter
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for commenting/annotations
+            with:
+              style: 'file' # Use .clang-format config file in your repo
+              tidy-checks: '' # Use .clang-tidy config file in your repo, or specify checks here
+              # Other optional inputs can be added here, e.g.,
+              # lines-changed-only: true
+              # thread-comments: 'update'
