@@ -5,9 +5,9 @@
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
 
 // motor groups
-pros::MotorGroup leftMotors({-9, 19},
+pros::MotorGroup leftMotors({-9, -19},
                             pros::MotorGearset::green); // left motor group - ports 3 (reversed), 4, 5 (reversed)
-    pros::MotorGroup rightMotors({16, 15}, pros::MotorGearset::green); // right motor group - ports 6, 7, 9 (reversed)
+    pros::MotorGroup rightMotors({17, 15}, pros::MotorGearset::green); // right motor group - ports 6, 7, 9 (reversed)
     pros::MotorGroup ChannelMotors({10, -11}, pros::MotorGearset::blue); // motors for channel - ports 10, 11 
     pros::Motor topchanelmotor(20, pros::MotorGearset::blue); // motors for channel - ports 20 
     pros::Motor middleMotor(12, pros::MotorGearset::blue); // motors for channel - port 12 
