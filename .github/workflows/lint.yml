@@ -24,12 +24,12 @@ jobs:
     - name: install compilation tools
       run: |
         # sudo apt install clang
-        wget -q https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
-        tar -xvf arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz
+        wget -q https://developer.arm.com/-/media/Files/downloads/gnu/13.3.rel1/binrel/arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi.tar.xz
+        tar -xvf arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi.tar.xz
         python3 -m pip install --user pros-cli
     - name: Build
       run: |
-        export PATH=$PATH:${GITHUB_WORKSPACE}/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin/
+        export PATH=$PATH:${GITHUB_WORKSPACE}/arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi/bin/
         pros c add-depot LemLib https://raw.githubusercontent.com/LemLib/LemLib/depot/stable.json
         pros c apply LemLib
         make clean all
