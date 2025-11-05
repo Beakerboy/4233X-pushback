@@ -32,6 +32,4 @@ jobs:
     - name: Build
       run: |
         export PATH=$PATH:${GITHUB_WORKSPACE}/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin/
-        arm-none-eabi-ld --version
-        /home/runner/work/4233X-pushback/4233X-pushback/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/11.2.1/../../../../arm-none-eabi/bin/ld --version
         make clean all
