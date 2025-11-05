@@ -23,13 +23,13 @@ jobs:
         exit 1
     - name: install compilation tools
       run: |
-        sudo apt install clang
+        # sudo apt install clang
         wget -q https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi.tar.xz
         tar -xf gcc-arm-11.2-2022.02-x86_64-arm-none-eabi.tar.xz
         python3 -m pip install --user pros-cli
-        pros c add-depot LemLib https://raw.githubusercontent.com/LemLib/LemLib/depot/stable.json
-        pros c apply LemLib
     - name: Build
       run: |
         export PATH=$PATH:${GITHUB_WORKSPACE}/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin/
+        pros c add-depot LemLib https://raw.githubusercontent.com/LemLib/LemLib/depot/stable.json
+        pros c apply LemLib
         make clean all
