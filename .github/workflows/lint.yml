@@ -23,6 +23,7 @@ jobs:
         exit 1
     - name: install compilation tools
       run: |
+        sudo apt install clang
         wget -q https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi.tar.xz
         tar -xf gcc-arm-11.2-2022.02-x86_64-arm-none-eabi.tar.xz
         python3 -m pip install --user pros-cli
