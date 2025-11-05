@@ -30,5 +30,7 @@ jobs:
         pros --version
     - name: Build
       run: |
+        echo $PATH | tr ':' '\n'
+        export PATH=$PATH:${GITHUB_WORKSPACE}/gcc-arm-none-eabi-10.3-2021.10/bin/
         arm-none-eabi-g++ --version
         make clean all
