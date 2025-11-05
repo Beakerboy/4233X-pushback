@@ -29,3 +29,6 @@ jobs:
         arm-none-eabi-gcc --version
         python3 -m pip install --user pros-cli
         pros --version
+    - name: Build
+      run: |
+        make clean all
